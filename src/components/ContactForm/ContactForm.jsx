@@ -1,6 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
-import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { LuUserPlus } from "react-icons/lu";
@@ -32,7 +31,7 @@ const ContactForm = () => {
 
   const handleSubmit = (values, actions) => {
     const newContact = {
-      id: nanoid(),
+      id: "$datatype.uuid",
       name: values.name.trim(),
       number: values.number.trim(),
     };

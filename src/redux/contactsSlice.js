@@ -4,13 +4,11 @@ import { fetchContacts, addContact, deleteContact } from "./contactsOps";
 const contactsInitialState = { items: [], loading: false, error: null };
 
 const isPending = (state) => {
-  console.log("pending");
   state.loading = true;
   state.error = null;
 };
 
 const isRejected = (state, action) => {
-  console.log("rejected");
   state.loading = false;
   state.error = action.payload;
 };
@@ -23,7 +21,6 @@ const contactsSlice = createSlice({
       //fetch contacts
       .addCase(fetchContacts.pending, isPending)
       .addCase(fetchContacts.fulfilled, (state, action) => {
-        console.log("fulfilled fetch");
         state.loading = false;
         state.items = action.payload;
       })

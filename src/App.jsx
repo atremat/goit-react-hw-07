@@ -16,7 +16,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(fetchTours());
     dispatch(fetchContacts());
   }, [dispatch]);
 
